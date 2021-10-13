@@ -3,3 +3,47 @@
     font-style: normal;
     color: #292D30;
 }
+
+@mixin lobe-table-box {
+    padding: 14px;
+    display: flex;
+    width: 470px;
+    margin-left: 78px;
+    border-bottom: 0.2px solid rgba(196, 196, 196, 0.3);
+}
+
+@mixin lobe-img-name{
+        >img{
+            //margin-left: 42px;
+            width: 78px;
+            height: 66.4;
+            left: 93px;
+            top: 257px;
+        }
+        >div{
+            //margin-left: 42px;
+            font-family: Montserrat;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 18px;
+            line-height: 11px;
+            /* identical to box height */
+            text-align: center;
+            color: #292D30;
+        }
+    
+}
+
+@mixin result-number-box{
+    border : 1px red solid;
+    margin-top: 5px;
+    margin-left: 200px;
+    padding:6px;
+    height: 50px;
+    align-items: center;
+    justify-content: center;
+}
+
+@mixin footer{
+    
+}
