@@ -1,0 +1,51 @@
+.container{
+    width:429px;
+    height:602;
+    /* width: 21cm; */
+}
+
+.foot{
+    position : absolute;
+    bottom : 8px;
+    left : 100px;
+}
+
+.block{
+    margin-left : 150px;
+    margin-top : 25px;
+}
+
+.firstTitle{
+    position : sticky;
+    border-left: 5px #5A7AB5 solid;
+    width: 500px;
+    height: 70px;
+    margin-top: 50px ;
+    margin-left :100px ;
+}
+
+.ftBoldTitle{
+    /* margin-top: 20px; */
+    margin-left: 10px;
+    font-weight: bold;
+    font-size: 30px;
+}
+
+.ftNomTitle{
+    margin-left : 10px;
+    margin-top: 50px;
+
+}
+
+.secondTitle{
+    width : 500px;
+    height : 70px;
+    font-weight: bold;
+    color : #5A7AB5;
+
+}
+
+.tableText{
+    margin: 300px;
+    /* margin-top : 100px; */
+}
