@@ -1,53 +1,71 @@
-import React from 'react';
-//import { render } from "react-dom";
-import { renderToString } from "react-dom/server";
-// import './Frame76.css';
+import React,{useRef} from 'react';
+import html2canvas from "html2canvas";
+import jsPDF from "jspdf" ;
+
 import './Frame76.scss';
 import img1 from "./img/coolicon.png";
 import img2 from "./img/coolicon1.png";
 import lobe1 from "./img/lobe1.png";
 import colorChart from "./img/image 95.png";
 import logo from "./img/BTXI_Logo.png";
-import jsPDF from "jspdf";
 
-// const targetDiv = () => (
 
-// );
 
-export default function Frame76() {
+
+export default function Frame76(props) {
+    const refPDF1 = useRef(null);
+    const refPDF2 = useRef(null);
+    const refPDF3 = useRef(null);
+    const refPDF4 = useRef(null);
     
-      const colstyle = {
-        width: "30%"
-      };
-      const tableStyle = {
-        width: "100%"
-      };
+    const printDocument = async () => {
 
-    const print = () =>{
-        const string = renderToString(<Prints />);
-        const pdf = new jsPDF("p", "mm", "a4");
-        const columns = [
-          "SOW Creation Date",
-          "SOW Start Date",
-          "Project",
-          "Last Updated",
-          "SOW End Date"
-        ];
-        var rows = [
-          [
-            "Dec 13, 2017",
-            "Jan 1, 2018",
-            "ABC Connect - ABCXYZ",
-             "Dec 13, 2017",
-            "Dec 31, 2018"
-          ]
-        ];
-        pdf.fromHTML(string);
-        pdf.save("pdf");
-    }
+        const pdf = new jsPDF('p', 'mm');
+        const width = pdf.internal.pageSize.getWidth();
+        const height = pdf.internal.pageSize.getHeight();
 
-    const Prints = () => (
-        <div className="container">
+        // print first page
+        const item1 = await html2canvas(refPDF1.current);
+        const imgData1 = item1.toDataURL('image/png');
+    
+        pdf.addImage(imgData1, 'JPEG', 0, 0, width, height);
+        pdf.addPage();
+        
+        // print second page
+        const item2 = await html2canvas(refPDF2.current);
+        const imgData2 = item2.toDataURL('image/png');
+    
+        pdf.addImage(imgData2, 'JPEG', 0, 0, width, height);
+        pdf.addPage();
+
+        //print third page
+        const item3 = await html2canvas(refPDF3.current);
+        const imgData3 = item3.toDataURL('image/png');
+    
+        pdf.addImage(imgData3, 'JPEG', 0, 0, width, height);
+    
+        pdf.save("download.pdf");
+        pdf.addPage();
+
+        //print fourth page
+        const item4 = await html2canvas(refPDF4.current);
+        const imgData4 = item4.toDataURL('image/png');
+    
+        pdf.addImage(imgData4, 'JPEG', 0, 0, width, height);
+    
+        pdf.save("download.pdf");
+
+      }
+
+
+
+    return (
+            <>
+        <button style={{display:"absolute",top:0, left:0, width:'50px'}} onClick={window.print}>print with window</button>
+        <button style={{display:"absolute",top:0, left:0, width:'50px'}} onClick={printDocument}>print with react-to-pdf</button>
+        
+        {/* first page */}
+        <div className="container" ref={refPDF1}>
                 {/* header */}
                 <div className="header"> 
                     <div>Last Printed</div>
@@ -66,7 +84,7 @@ export default function Frame76() {
 
                 {/* small first title */}
                 <div className="second-div">
-                    <div>
+                    <div className="small-title">
                         <img src={img1} />
                         <div>Patient Information</div>
                     </div>
@@ -206,17 +224,458 @@ export default function Frame76() {
                 <div className="footer">
                     <div><img src={logo}/></div>
                     <div>page 1/3</div>
+                </div> 
+            </div>
+
+            {/* second page */}
+            <div className="container" ref={refPDF2}>
+                {/* header */}
+                <div className="header"> 
+                    <div>Last Printed</div>
+                    <div>26/07/2021</div>
                 </div>
-                
+
+                {/* main title */}
+                <div className="main-title"> 
+                    <div>
+                        <text>BTXBrain-Amyloid</text>
+                    </div>
+                    <div>
+                        <text>AI-based Automatic Amyloid-beta PET Quantification Report</text> 
+                    </div>
+                </div>
+
+                {/* small title */}
+                <div className="page2-second-div">
+                    <div className="small-title">
+                        <img src={img1} />
+                        <div>Quantification Results</div>
+                    </div>
+
+                    {/* first content */}
+                    <div className="page2-first-content">
+                        <div>
+                            <div>Global cortex</div>
+                            <div>Frontal cortex</div>
+                            <div>Precuneus-PCC</div>
+                            <div>Lateral parietal cortex</div>
+                            <div>Lateral temporal cortex</div>
+                            <div>Medial temporal cortex</div>
+                            <div>Occipital cortex</div>
+                        </div>
+                        <div>
+                            <div>SUVR</div>
+                            <div className="chartBar"></div>
+                            <div className="chartBar"></div>
+                            <div className="chartBar"></div>
+                            <div className="chartBar"></div>
+                            <div className="chartBar"></div>
+                            <div className="chartBar"></div>
+                            <div className="chartBar"></div>
+                            <div>
+                                <div>min</div>
+                                <div>max</div>
+                            </div>
+                        </div>
+                        <div>
+                        <div>Centiloid</div>
+                            <div className="chartBar"></div>
+                            <div className="chartBar"></div>
+                            <div className="chartBar"></div>
+                            <div className="chartBar"></div>
+                            <div className="chartBar"></div>
+                            <div className="chartBar"></div>
+                            <div className="chartBar"></div>
+                            <div>
+                                <div>0</div>
+                                <div>100</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    {/* second content */}
+                    <div className="page2-second-content">
+                        <div>Regional SUVR</div>
+                        <table  border='1' style={{borderCollapse: "collapse"}}>
+                            <thead>
+                                <tr>
+                                    <th>Brain Region</th>
+                                    <th>Total</th>
+                                    <th>Left</th>
+                                    <th>Right</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Grobal</td>
+                                    <td>1.60</td>
+                                    <td>-</td>
+                                    <td>-</td>
+                                </tr>
+                                <tr>
+                                    <td>Occipital</td>
+                                    <td>0.85</td>
+                                    <td>0.85</td>
+                                    <td>0.85</td>
+                                </tr>
+                                <tr>
+                                    <td>Occipital</td>
+                                    <td>0.85</td>
+                                    <td>0.85</td>
+                                    <td>0.85</td>
+                                </tr>
+                                <tr>
+                                    <td>Occipital</td>
+                                    <td>0.85</td>
+                                    <td>0.85</td>
+                                    <td>0.85</td>
+                                </tr>
+                                <tr>
+                                    <td>Occipital</td>
+                                    <td>0.85</td>
+                                    <td>0.85</td>
+                                    <td>0.85</td>
+                                </tr>
+                                <tr>
+                                    <td>Occipital</td>
+                                    <td>0.85</td>
+                                    <td>0.85</td>
+                                    <td>0.85</td>
+                                </tr>
+                                <tr>
+                                    <td>Occipital</td>
+                                    <td>0.85</td>
+                                    <td>0.85</td>
+                                    <td>0.85</td>
+                                </tr>
+                                <tr>
+                                    <td>Occipital</td>
+                                    <td>0.85</td>
+                                    <td>0.85</td>
+                                    <td>0.85</td>
+                                </tr>
+                                <tr>
+                                    <td>Occipital</td>
+                                    <td>0.85</td>
+                                    <td>0.85</td>
+                                    <td>0.85</td>
+                                </tr>
+                                <tr>
+                                    <td>Occipital</td>
+                                    <td>0.85</td>
+                                    <td>0.85</td>
+                                    <td>0.85</td>
+                                </tr>
+                                <tr>
+                                    <td>Occipital</td>
+                                    <td>0.85</td>
+                                    <td>0.85</td>
+                                    <td>0.85</td>
+                                </tr>
+                                <tr>
+                                    <td>Occipital</td>
+                                    <td>0.85</td>
+                                    <td>0.85</td>
+                                    <td>0.85</td>
+                                </tr>
+                                <tr>
+                                    <td>Occipital</td>
+                                    <td>0.85</td>
+                                    <td>0.85</td>
+                                    <td>0.85</td>
+                                </tr>
+                                <tr>
+                                    <td>Occipital</td>
+                                    <td>0.85</td>
+                                    <td>0.85</td>
+                                    <td>0.85</td>
+                                </tr>
+                                <tr>
+                                    <td>Occipital</td>
+                                    <td>0.85</td>
+                                    <td>0.85</td>
+                                    <td>0.85</td>
+                                </tr>
+                                <tr>
+                                    <td>Occipital</td>
+                                    <td>0.85</td>
+                                    <td>0.85</td>
+                                    <td>0.85</td>
+                                </tr>
+                                <tr>
+                                    <td>Occipital</td>
+                                    <td>0.85</td>
+                                    <td>0.85</td>
+                                    <td>0.85</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        {/* <div>
+                            <div>Brain Region</div>
+                            <div>Total</div>
+                            <div>Left</div>
+                            <div>Right</div>                           
+                        </div>
+                        <div>
+                            <div>
+                                <div>
+
+                                    <div>Grobal</div>
+                                    <div>Frontal</div>
+                                    <div>Cingulatel</div>
+                                    <div>Lat. parietal</div>
+                                    <div>Lat. temporal</div>
+                                    <div>Occipital</div>
+                                </div>
+                            </div>
+                            <div>
+                                <div>
+                                    
+                                    <div>1.60</div>
+                                    <div>1.78</div>
+                                    <div>1.95</div>
+                                    <div>1.50</div>
+                                    <div>1.33</div>
+                                    <div>0.85</div>
+                                </div>
+                            </div>
+                            <div>
+                                <div>
+                                    
+                                    <div>-</div>
+                                    <div>1.60</div>
+                                    <div>1.90</div>
+                                    <div>1.50</div>
+                                    <div>1.30</div>
+                                    <div>0.85</div>
+                                </div>
+                            </div>
+                            <div>
+                                <div>
+                                    
+                                    <div>-</div>
+                                    <div>1.95</div>
+                                    <div>2.00</div>
+                                    <div>1.51</div>
+                                    <div>1.35</div>
+                                    <div>0.85</div>
+                                </div>
+                            </div>                           
+
+                        </div> */}
+                    </div>
+
+                    
+                </div>
+                {/* footer */}
+                <div className="footer">
+                    <div><img src={logo}/></div>
+                    <div>page 2/3</div>
+                </div> 
+            </div>
+
+
+
+
+
+            {/* third page */}
+            <div className="container" ref={refPDF3}>
+                {/* header */}
+                <div className="header"> 
+                    <div>Last Printed</div>
+                    <div>26/07/2021</div>
+                </div>
+
+                {/* main title */}
+                <div className="main-title"> 
+                    <div>
+                        <text>BTXBrain-Amyloid</text>
+                    </div>
+                    <div>
+                        <text>AI-based Automatic Amyloid-beta PET Quantification Report</text> 
+                    </div>
+                </div>
+                    
+                {/* second content */}
+                <div className="page2-second-content">
+                    <div>
+                        <div>Regional SUVR</div>
+                        <table  border='1' style={{borderCollapse: "collapse"}}>
+                            <th>Brain Region</th>
+                            <th>Total</th>
+                            <th>Left</th>
+                            <th>Right</th>
+                            <tr>
+                                <td>Grobal</td>
+                                <td>1.60</td>
+                                <td>-</td>
+                                <td>-</td>
+                            </tr>
+                            <tr>
+                                <td>Occipital</td>
+                                <td>0.85</td>
+                                <td>0.85</td>
+                                <td>0.85</td>
+                            </tr>
+                            <tr>
+                                <td>Occipital</td>
+                                <td>0.85</td>
+                                <td>0.85</td>
+                                <td>0.85</td>
+                            </tr>
+                            <tr>
+                                <td>Occipital</td>
+                                <td>0.85</td>
+                                <td>0.85</td>
+                                <td>0.85</td>
+                            </tr>    
+                        </table>
+                        
+                    </div>
+
+                    
+                </div>
+                {/* third content */}
+                <div className="page2-second-content">
+                    <div>
+                        <div>Regional Centiloid</div>
+                        <table  border='1' style={{borderCollapse: "collapse"}}>
+                            <th>Brain Region</th>
+                            <th>Total</th>
+                            <th>Left</th>
+                            <th>Right</th>
+                            <tr>
+                                <td>Grobal</td>
+                                <td>88</td>
+                                <td>-</td>
+                                <td>-</td>
+                            </tr>
+                            <tr>
+                                <td>Frontal</td>
+                                <td>78</td>
+                                <td>75</td>
+                                <td>80</td>
+                            </tr>
+                            <tr>
+                                <td>Cingulate</td>
+                                <td>100</td>
+                                <td>98</td>
+                                <td>102</td>
+                            </tr>
+                            <tr>
+                                <td>Lat. parietal</td>
+                                <td>52</td>
+                                <td>50</td>
+                                <td>55</td>
+                            </tr> 
+                            <tr>
+                                <td>Lat. temporal</td>
+                                <td>61</td>
+                                <td>62</td>
+                                <td>60</td>
+                            </tr> 
+                            <tr>
+                                <td>Occipital</td>
+                                <td>31</td>
+                                <td>30</td>
+                                <td>33</td>
+                            </tr>    
+                        </table>
+                        
+                    </div>                    
+                </div>              
+    
+                {/* footer */}
+                <div className="footer">
+                    <div><img src={logo}/></div>
+                    <div>page 3/3</div>
+                </div> 
+
                 
             </div>
-      );
+            {/* fourth page */}
+            <div className="container" ref={refPDF4}>
+                {/* header */}
+                <div className="header"> 
+                    <div>Last Printed</div>
+                    <div>26/07/2021</div>
+                </div>
 
-    return (
-        <>
-            <div  onClick={print} 
-            style={{position:"absolute", top:"0", left:"0", width:"50px", height:"50px", backgroundColor:"red"}}></div>
-            <Prints/>
+                {/* main title */}
+                <div className="main-title"> 
+                    <div>
+                        <text>BTXBrain-Amyloid</text>
+                    </div>
+                    <div>
+                        <text>AI-based Automatic Amyloid-beta PET Quantification Report</text> 
+                    </div>
+                </div>
+
+                {/* small title */}
+                <div className="page2-second-div">
+                    <div className="small-title">
+                        <img src={img1} />
+                        <div>Amyloid-beta PET Image</div>
+                    </div>
+                </div>
+
+                {/* first content */}
+                <div className="page4-first-content"> 
+                    <div>Spatially normalized SUVR image</div>
+                    
+                    <div>
+                        <div>
+                            <div>
+                                {/* lobe picture table 1 */}
+                                <div>
+                                    <div>뇌1</div>
+                                    <div>뇌2</div>
+                                    <div>뇌3</div>
+                                    <div>뇌4</div>
+                                </div>
+                                <div>
+                                    <div>뇌5</div>
+                                    <div>뇌6</div>
+                                    <div>뇌7</div>
+                                    <div>뇌8</div>
+                                </div>
+                            </div>
+                            <div>chart</div>
+                        </div>
+                        
+                        
+                    </div>
+                </div>
+
+                {/* second content */}
+                <div className="page4-second-content">
+                    <div>SUVR rendered on brain surface</div>
+                    <div>
+                        <div>
+                            {/* lobe picture table 2 */}
+                            <div>
+                                <div>뇌1</div>
+                                <div>뇌2</div>
+                            </div>
+                            <div>
+                                <div>뇌3</div>
+                                <div>뇌4</div>
+                            </div>
+                        </div>
+
+                        <div>chart</div>
+                    </div>
+                </div>
+                
+                {/* footer */}
+                <div className="footer">
+                    <div><img src={logo}/></div>
+                    <div>page 3/3</div>
+                </div> 
+
+                
+            </div>
+            
         </>
     )
 }
