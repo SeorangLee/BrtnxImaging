@@ -410,59 +410,6 @@ export default function Frame76(props) {
                                 </tr>
                             </tbody>
                         </table>
-                        {/* <div>
-                            <div>Brain Region</div>
-                            <div>Total</div>
-                            <div>Left</div>
-                            <div>Right</div>                           
-                        </div>
-                        <div>
-                            <div>
-                                <div>
-
-                                    <div>Grobal</div>
-                                    <div>Frontal</div>
-                                    <div>Cingulatel</div>
-                                    <div>Lat. parietal</div>
-                                    <div>Lat. temporal</div>
-                                    <div>Occipital</div>
-                                </div>
-                            </div>
-                            <div>
-                                <div>
-                                    
-                                    <div>1.60</div>
-                                    <div>1.78</div>
-                                    <div>1.95</div>
-                                    <div>1.50</div>
-                                    <div>1.33</div>
-                                    <div>0.85</div>
-                                </div>
-                            </div>
-                            <div>
-                                <div>
-                                    
-                                    <div>-</div>
-                                    <div>1.60</div>
-                                    <div>1.90</div>
-                                    <div>1.50</div>
-                                    <div>1.30</div>
-                                    <div>0.85</div>
-                                </div>
-                            </div>
-                            <div>
-                                <div>
-                                    
-                                    <div>-</div>
-                                    <div>1.95</div>
-                                    <div>2.00</div>
-                                    <div>1.51</div>
-                                    <div>1.35</div>
-                                    <div>0.85</div>
-                                </div>
-                            </div>                           
-
-                        </div> */}
                     </div>
 
                     
@@ -496,90 +443,102 @@ export default function Frame76(props) {
                     </div>
                 </div>
                     
-                {/* second content */}
-                <div className="page2-second-content">
+                {/* first content */}
+                <div className="page3-first-content">
                     <div>
                         <div>Regional SUVR</div>
                         <table  border='1' style={{borderCollapse: "collapse"}}>
-                            <th>Brain Region</th>
-                            <th>Total</th>
-                            <th>Left</th>
-                            <th>Right</th>
-                            <tr>
-                                <td>Grobal</td>
-                                <td>1.60</td>
-                                <td>-</td>
-                                <td>-</td>
-                            </tr>
-                            <tr>
-                                <td>Occipital</td>
-                                <td>0.85</td>
-                                <td>0.85</td>
-                                <td>0.85</td>
-                            </tr>
-                            <tr>
-                                <td>Occipital</td>
-                                <td>0.85</td>
-                                <td>0.85</td>
-                                <td>0.85</td>
-                            </tr>
-                            <tr>
-                                <td>Occipital</td>
-                                <td>0.85</td>
-                                <td>0.85</td>
-                                <td>0.85</td>
-                            </tr>    
+                            <thead>
+                                <tr>
+                                    <th>Brain Region</th>
+                                    <th>Total</th>
+                                    <th>Left</th>
+                                    <th>Right</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Grobal</td>
+                                    <td>1.60</td>
+                                    <td>-</td>
+                                    <td>-</td>
+                                </tr>
+                                <tr>
+                                    <td>Occipital</td>
+                                    <td>0.85</td>
+                                    <td>0.85</td>
+                                    <td>0.85</td>
+                                </tr>
+                                <tr>
+                                    <td>Occipital</td>
+                                    <td>0.85</td>
+                                    <td>0.85</td>
+                                    <td>0.85</td>
+                                </tr>
+                                <tr>
+                                    <td>Occipital</td>
+                                    <td>0.85</td>
+                                    <td>0.85</td>
+                                    <td>0.85</td>
+                                </tr> 
+                            </tbody>   
                         </table>
                         
                     </div>
 
                     
                 </div>
-                {/* third content */}
-                <div className="page2-second-content">
+                {/* second content */}
+                <div className="page3-second-content">
                     <div>
                         <div>Regional Centiloid</div>
                         <table  border='1' style={{borderCollapse: "collapse"}}>
-                            <th>Brain Region</th>
-                            <th>Total</th>
-                            <th>Left</th>
-                            <th>Right</th>
-                            <tr>
-                                <td>Grobal</td>
-                                <td>88</td>
-                                <td>-</td>
-                                <td>-</td>
-                            </tr>
-                            <tr>
-                                <td>Frontal</td>
-                                <td>78</td>
-                                <td>75</td>
-                                <td>80</td>
-                            </tr>
-                            <tr>
-                                <td>Cingulate</td>
-                                <td>100</td>
-                                <td>98</td>
-                                <td>102</td>
-                            </tr>
-                            <tr>
-                                <td>Lat. parietal</td>
-                                <td>52</td>
-                                <td>50</td>
-                                <td>55</td>
-                            </tr> 
-                            <tr>
-                                <td>Lat. temporal</td>
-                                <td>61</td>
-                                <td>62</td>
-                                <td>60</td>
-                            </tr> 
-                            <tr>
-                                <td>Occipital</td>
-                                <td>31</td>
-                                <td>30</td>
-                                <td>33</td>
-                            </tr>    
+                            <thead>
+                                <tr>
+                                    <th>Brain Region</th>
+                                    <th>Total</th>
+                                    <th>Left</th>
+                                    <th>Right</th>
+                                </tr>
+                                <tr>
+                                    <td>Grobal</td>
+                                    <td>88</td>
+                                    <td>-</td>
+                                    <td>-</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Frontal</td>
+                                    <td>78</td>
+                                    <td>75</td>
+                                    <td>80</td>
+                                </tr>
+                                <tr>
+                                    <td>Cingulate</td>
+                                    <td>100</td>
+                                    <td>98</td>
+                                    <td>102</td>
+                                </tr>
+                                <tr>
+                                    <td>Lat. parietal</td>
+                                    <td>52</td>
+                                    <td>50</td>
+                                    <td>55</td>
+                                </tr> 
+                                <tr>
+                                    <td>Lat. temporal</td>
+                                    <td>61</td>
+                                    <td>62</td>
+                                    <td>60</td>
+                                </tr> 
+                                <tr>
+                                    <td>Occipital</td>
+                                    <td>31</td>
+                                    <td>30</td>
+                                    <td>33</td>
+                                </tr>  
+                            </tbody>  
                         </table>
                         
                     </div>                    
