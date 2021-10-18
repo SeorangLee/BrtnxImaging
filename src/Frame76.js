@@ -8,6 +8,7 @@ import img2 from "./img/coolicon1.png";
 import lobe1 from "./img/lobe1.png";
 import colorChart from "./img/image 95.png";
 import logo from "./img/BTXI_Logo.png";
+import colorChart_2 from "./img/colorChart_2.png";
 
 
 
@@ -221,9 +222,9 @@ export default function Frame76(props) {
                 </div>
 
                 {/* footer */}
-                <div className="footer">
+                <div className="footer1">
                     <div><img src={logo}/></div>
-                    <div>page 1/3</div>
+                    <div>page 1/4</div>
                 </div> 
             </div>
 
@@ -296,7 +297,9 @@ export default function Frame76(props) {
                     {/* second content */}
                     <div className="page2-second-content">
                         <div>Regional SUVR</div>
-                        <table  border='1' style={{borderCollapse: "collapse"}}>
+                        
+                        {/* table chart */}
+                        <table style={{borderCollapse: "collapse"}}>
                             <thead>
                                 <tr>
                                     <th>Brain Region</th>
@@ -415,9 +418,9 @@ export default function Frame76(props) {
                     
                 </div>
                 {/* footer */}
-                <div className="footer">
+                <div className="footer2">
                     <div><img src={logo}/></div>
-                    <div>page 2/3</div>
+                    <div>page 2/4</div>
                 </div> 
             </div>
 
@@ -447,7 +450,7 @@ export default function Frame76(props) {
                 <div className="page3-first-content">
                     <div>
                         <div>Regional SUVR</div>
-                        <table  border='1' style={{borderCollapse: "collapse"}}>
+                        <table style={{borderCollapse: "collapse"}}>
                             <thead>
                                 <tr>
                                     <th>Brain Region</th>
@@ -492,7 +495,7 @@ export default function Frame76(props) {
                 <div className="page3-second-content">
                     <div>
                         <div>Regional Centiloid</div>
-                        <table  border='1' style={{borderCollapse: "collapse"}}>
+                        <table  style={{borderCollapse: "collapse"}}>
                             <thead>
                                 <tr>
                                     <th>Brain Region</th>
@@ -500,14 +503,15 @@ export default function Frame76(props) {
                                     <th>Left</th>
                                     <th>Right</th>
                                 </tr>
+                                
+                            </thead>
+                            <tbody>
                                 <tr>
                                     <td>Grobal</td>
                                     <td>88</td>
                                     <td>-</td>
                                     <td>-</td>
                                 </tr>
-                            </thead>
-                            <tbody>
                                 <tr>
                                     <td>Frontal</td>
                                     <td>78</td>
@@ -545,9 +549,9 @@ export default function Frame76(props) {
                 </div>              
     
                 {/* footer */}
-                <div className="footer">
+                <div className="footer3">
                     <div><img src={logo}/></div>
-                    <div>page 3/3</div>
+                    <div>page 3/4</div>
                 </div> 
 
                 
@@ -599,7 +603,21 @@ export default function Frame76(props) {
                                     <div>뇌8</div>
                                 </div>
                             </div>
-                            <div>chart</div>
+                            {/* color chart */}
+                            <div>
+                                <div>
+                                    <img src={colorChart_2}/>
+                                    <div>
+                                        <div>2.0</div>
+                                        <div>1.0</div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div>SUVR</div>
+                                </div>
+                                
+                            </div>
+                            
                         </div>
                         
                         
@@ -622,14 +640,27 @@ export default function Frame76(props) {
                             </div>
                         </div>
 
-                        <div>chart</div>
+                        <div>
+                            <div>
+                                <img src={colorChart_2}/>
+                                <div>
+                                    <div>2.0</div>
+                                    <div>1.0</div>
+                                </div>
+                            </div>
+                            <div>
+                                <div>SUVR</div>
+                            </div>
+                            
+                        </div>
+
                     </div>
                 </div>
                 
                 {/* footer */}
-                <div className="footer">
+                <div className="footer4">
                     <div><img src={logo}/></div>
-                    <div>page 3/3</div>
+                    <div>page 4/4</div>
                 </div> 
 
                 

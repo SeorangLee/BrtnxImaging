@@ -195,7 +195,7 @@
             color: #C4C4C4;
         }
 
-        }
+    }
 
     .chartBar{
         margin-bottom: 16px;
@@ -241,7 +241,8 @@
     }
 }
 
-.page2-second-content{
+.page2-second-content{ //second page second content
+    margin-top: 50px;
     >div:nth-child(1){
         margin-left:50px;
         font-family: "Montserrat";
@@ -249,22 +250,8 @@
         font-weight: 1000;
         font-size: 18px;
     }
-    >table{
-        // border: 1px red solid;
-        margin-left: 50px;
-        width:80%;
-        text-align: center;
-        >thead{
-            >tr{
-                background-color:#C4C4C4;
-                // text-align: left;
-            }
-        }
-        >tbody{
-            >tr{
-                
-            }
-        }
+    >table{ //table chart
+        @include table-style();
     }
     >div:nth-child(2){
         margin-top: 10px;
@@ -298,71 +285,21 @@
     }
 }
 
-.page4-first-content{
-
-    >div:nth-child(2){//lobe picture table 1
-        >div:nth-child(1){
-            border: 1px red solid;
-            display: flex;
-            >div:nth-child(1){//lobe picture table 1
-                border: 1px blue solid;
-                >div:nth-child(1){
-                    display: flex;
-                }
-                >div:nth-child(2){
-                    display: flex;
-                }
-            }
-        }
-    }
-}
-
-.page4-second-content{
-
-    >div:nth-child(2){
-        border: 1px red solid;
-        display: flex;
-        >div:nth-child(1){//lobe picture table 2
-            border: 1px blue solid;
-            >div:nth-child(1){
-                display: flex;
-            }
-            >div:nth-child(2){
-                display: flex;
-            }
-        }
-    }
-}
-
 .page3-first-content{
+    margin-top: 50px;
     >div:nth-child(1){
         >div:nth-child(1){
             margin-top: 30px;
             margin-left: 50px;
             font-family: Montserrat;
             font-style: normal;
-            font-weight: 500;
+            font-weight: 1000;
             font-size: 18px;
             color: #000000;
         }
         
         >table{
-            margin-top: 10px;
-            border: 1px red solid;
-            margin-left: 50px;
-            width:80%;
-            text-align: center;
-            >thead{
-                >tr{
-                    background-color:#C4C4C4;
-                    // text-align: left;
-                }
-            }
-            >tbody{
-                >tr{
-                    
-                }
-            }
+            @include table-style();
         }
     }
 }
@@ -374,28 +311,163 @@
             margin-left: 50px;
             font-family: Montserrat;
             font-style: normal;
-            font-weight: 500;
+            font-weight: 1000;
             font-size: 18px;
             color: #000000;
         }
         >table{
-            margin-top: 10px;
-            // border: 1px red solid;
-            margin-left: 50px;
-            width:80%;
-            text-align: center;
-            >thead{
-                >tr:nth-child(1){
-                    background-color:#C4C4C4;
-                    // text-align: left;
+            margin-top: 30px;
+            @include table-style();
+        }
+        
+    }
+}
+
+
+.page4-first-content{
+    >div:nth-child(1){ //title
+        margin-top: 20px;
+        margin-left: 50px;
+        font-family: Montserrat;
+        font-style: normal;
+        font-weight: 700;
+        font-size: 18px;
+        color: #000000;
+    }
+
+    >div:nth-child(2){//lobe picture table 1
+        >div:nth-child(1){
+            margin-top: 20px;
+            margin-left:105px;
+            width: 600px;
+            height: 264px;
+            //border: 1px red solid;
+            display: flex;
+            >div:nth-child(1){//lobe picture table 1
+                width: 450px;
+                border: 1px blue solid;
+
+                >div:nth-child(1){ 
+                    display: flex;
+                }
+                >div:nth-child(2){
+                    display: flex;
                 }
             }
-            >tbody{
-                >tr{
-                    
+
+            >div:nth-child(2){//chart
+                >div:nth-child(1){//color chart
+                    display: flex;
+                    margin-top: 35px;
+                    margin-left: 12px;
+                    width: 20px;
+                    height: 188px;
+                    >img{
+                        height: 188px;
+                    }
+                    >div:nth-child(2){
+                        margin-left: 5px;
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: space-between;
+                        font-family: Montserrat;
+                        font-style: normal;
+                        font-weight: normal;
+                        font-size: 12px;
+                        color: #000000;
+                    }
                 }
+              
+
+                // >div:nth-child(1){
+                //     >div:nth-child(2){//chart number
+                //         margin-left: 3px;
+                //         display: flex;
+                //         flex-direction: column;
+                //         justify-content: space-between;
+                //         font-family: Montserrat;
+                //         font-style: normal;
+                //         font-weight: normal;
+                //         font-size: 12px;
+                //         color: #000000;
+                //     }
+                // }
             }
         }
         
     }
+}
+
+.page4-second-content{//lobe picture table 2
+    >div:nth-child(1){ 
+        margin-top: 40px;
+        margin-left: 50px;
+        font-family: Montserrat;
+        font-style: normal;
+        font-weight: 700;
+        font-size: 18px;
+        color: #000000;
+    }
+
+    >div:nth-child(2){
+        margin-top: 30px;
+        margin-left:125px;
+        //border: 1px red solid;
+        width: 550px;
+        height: 264px;
+        display: flex;
+        >div:nth-child(1){//lobe picture table 2
+            margin-left: 20px;
+            border: 1px blue solid;
+            width: 380px;
+            >div:nth-child(1){
+                display: flex;
+            }
+            >div:nth-child(2){
+                display: flex;
+            }
+        }
+
+        >div:nth-child(2){//color chart
+            >div:nth-child(1){//color chart
+                display: flex;
+                margin-top: 35px;
+                margin-left: 12px;
+                width: 20px;
+                height: 188px;
+                >img{
+                    height: 188px;
+                }
+                >div:nth-child(2){
+                    margin-left: 5px;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-between;
+                    font-family: Montserrat;
+                    font-style: normal;
+                    font-weight: normal;
+                    font-size: 12px;
+                    color: #000000;
+                }
+            }
+        }
+
+    }
+}
+
+.footer1{
+    @include footer();
+    margin-top: 50px;
+}
+.footer2{
+    @include footer();
+    margin-top: 150px;
+}
+.footer3{
+    @include footer();
+    margin-top:800px;
+}
+.footer4{
+    @include footer();
+    margin-top:400px;
 }

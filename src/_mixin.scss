@@ -92,3 +92,58 @@
         font-size: 20px;
         color: #5A7AB5;}
 }
+
+@mixin footer{
+    //border-top : 1px solid red;
+    display : flex;
+    justify-content: space-between;
+    position: sticky;
+
+    >div:nth-child(1){
+        >img{
+            width: 250px;
+            height: 20px;
+        }
+    }
+    >div:nth-child(2){
+        font-family: Montserrat;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 14px;
+        color: #C4C4C4;
+    }
+}
+
+@mixin table-style{
+        margin-top: 10px;
+        margin-left: 70px;
+        width:75%;
+        border-bottom: 0.5px solid rgba(196, 196, 196, 0.3);
+        text-align: center;
+        >thead{
+            >tr{
+                background-color:#C4C4C4;
+                // text-align: left;
+                >th{
+                    height: 35px;
+                    font-family: Montserrat;
+                    font-style: normal;
+                    font-weight: 700;
+                    font-size: 18px;
+                    color: #292D30;
+                }
+            }
+        }
+        >tbody{
+            >tr{
+                >td{
+                    height: 20px;
+                    font-family: Montserrat;
+                    font-style: normal;
+                    font-weight: normal;
+                    font-size: 18px;
+                }
+                
+            }
+        }
+}
