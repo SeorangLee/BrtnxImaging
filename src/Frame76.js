@@ -256,13 +256,13 @@ export default function Frame76(props) {
                     {/* first content */}
                     <div className="page2-first-content">
                         <div>
-                            <div>Global cortex</div>
-                            <div>Frontal cortex</div>
+                            <div>Global</div>
+                            <div>Frontal</div>
                             <div>Precuneus-PCC</div>
-                            <div>Lateral parietal cortex</div>
-                            <div>Lateral temporal cortex</div>
-                            <div>Medial temporal cortex</div>
-                            <div>Occipital cortex</div>
+                            <div>Lateral parietal</div>
+                            <div>Lateral temporal</div>
+                            <div>Medial temporal</div>
+                            <div>Occipital</div>
                         </div>
                         <div>
                             <div>SUVR</div>
@@ -279,7 +279,7 @@ export default function Frame76(props) {
                             </div>
                         </div>
                         <div>
-                        <div>Centiloid</div>
+                            <div>Centiloid</div>
                             <div className="chartBar"></div>
                             <div className="chartBar"></div>
                             <div className="chartBar"></div>
@@ -310,7 +310,7 @@ export default function Frame76(props) {
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td>Grobal</td>
+                                    <td className="td-title">Grobal</td>
                                     <td>1.60</td>
                                     <td>-</td>
                                     <td>-</td>
