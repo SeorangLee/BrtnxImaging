@@ -215,14 +215,14 @@
 }
 
 .page2-first-content{
-    border : 1px solid red;
+    //border : 1px solid red;
     display: flex;
     width: 700px;
     padding: 20px;
     justify-content: space-evenly;
     margin-left: 30px;
     >div:nth-child(1){
-        border : 1px blue solid;
+        //border : 1px blue solid;
         text-align: right;
         margin-top: 15px;
         width: 180px;

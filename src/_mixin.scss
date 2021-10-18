@@ -36,12 +36,13 @@
             top: 257px;
         }
         >div{
+            
             //margin-left: 42px;
             font-family: Montserrat;
             font-style: normal;
             font-weight: normal;
             font-size: 18px;
-            line-height: 11px;
+            //line-height: 11px;
             /* identical to box height */
             text-align: center;
             color: #292D30;
@@ -50,13 +51,20 @@
 }
 
 @mixin result-number-box{
-    border : 1px red solid;
-    margin-top: 5px;
     margin-left: 200px;
     padding:6px;
-    height: 50px;
+    height: 30px;
     align-items: center;
-    justify-content: center;
+    justify-content: space-evenly;
+    
+    >div:nth-child(1){
+        border-left:8px #FF3D3D solid;
+        margin-bottom: 3px;
+    }
+    >div:nth-child(2){
+        margin-left: 15px;
+        border-left: 8px  #A50021 solid;
+    }
 }
 
 @mixin footer{

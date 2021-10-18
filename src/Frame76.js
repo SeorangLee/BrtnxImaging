@@ -139,7 +139,7 @@ export default function Frame76(props) {
                             <div className="resultsNumBox"> 
                                 <div>
                                     <div>L</div>
-                                    <div>1.6</div>
+                                    <div>1.60</div>
                                 </div>
                                 <div>
                                     <div>R</div>
